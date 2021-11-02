@@ -71,7 +71,5 @@ def scrape():
         hemisphere_image_urls.append(dt)
 
     # return everything that was collected as a dictionary 
-    return {'Latest News':[title1,paragraph], 'Featured Image':featured_image_url,
-            'Comparison Table':final_table.to_json(orient = 'index'), 'Enhanced Pictures':hemisphere_image_urls}
-
-print(scrape())
+    return {'Latest_News':{'Title':title1,'Description':paragraph}, 'Featured_Image':featured_image_url,
+            'Comparison_Table':final_table.to_json(orient = 'index'), 'Enhanced_Pictures':hemisphere_image_urls}
