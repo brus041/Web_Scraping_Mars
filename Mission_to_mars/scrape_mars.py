@@ -18,7 +18,7 @@ def scrape():
     soup = BeautifulSoup(html, 'html.parser')
     results_titles = soup.find_all('div', class_='content_title')
     results_paragraphs = soup.find_all('div', class_='article_teaser_body')
-    title = str(results_titles[0].text)
+    title1 = str(results_titles[0].text)
     paragraph = str(results_paragraphs[0].text)
    
     # *****************************************Part 2*****************************************
@@ -71,7 +71,7 @@ def scrape():
         hemisphere_image_urls.append(dt)
 
     # return everything that was collected as a dictionary 
-    return {'Latest News':[title,paragraph], 'Featured Image':featured_image_url,
-            'Comparison Table':final_table, 'Enhanced Pictures':hemisphere_image_urls}
+    return {'Latest News':[title1,paragraph], 'Featured Image':featured_image_url,
+            'Comparison Table':final_table.to_json(orient = 'index'), 'Enhanced Pictures':hemisphere_image_urls}
 
 print(scrape())
