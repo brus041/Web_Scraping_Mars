@@ -15,7 +15,7 @@ def scrape_():
     from scrape_mars import scrape
     return scrape()
 
-#db.mars_data.insert(scrape_())
+db.mars_data.insert(scrape_())
 
 @app.route("/")
 def query():

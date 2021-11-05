@@ -67,9 +67,11 @@ def scrape():
         t = " ".join(enh_title)
 
         #create dictionary element for dictionary list
-        dt = {'Title':t,"Image Url":base_url+'/'+enhanced_url}
+        dt = {'Title':t,"Image_Url":base_url+'/'+enhanced_url}
         hemisphere_image_urls.append(dt)
 
     # return everything that was collected as a dictionary 
     return {'Latest_News':{'Title':title1,'Description':paragraph}, 'Featured_Image':featured_image_url,
-            'Comparison_Table':final_table.to_json(orient = 'index'), 'Enhanced_Pictures':hemisphere_image_urls}
+            'Comparison_Table':final_table.to_html(), 'Enhanced_Pictures':hemisphere_image_urls}
+
+print(scrape()['Comparison_Table'])
