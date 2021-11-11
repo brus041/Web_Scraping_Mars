@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-
-
 <body>
   <div class="container-fluid">
     <div class="jumbotron text-center">
@@ -24,49 +22,8 @@
   <img src = '{{data.Featured_Image}}'>
 
   <h2>Mars versus Earth Comparison</h2>
-  <div class="table-responsive"> 
-    <table border="1" class="dataframe">
-      <thead>
-        <tr style="text-align: right;">
-          <th></th>
-          <th>Mars</th>
-          <th>Earth</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Diameter:</th>
-          <td>6,779 km</td>
-          <td>12,742 km</td>
-        </tr>
-        <tr>
-          <th>Mass:</th>
-          <td>6.39 × 10^23 kg</td>
-          <td>5.97 × 10^24 kg</td>
-        </tr>
-        <tr>
-          <th>Moons:</th>
-          <td>2</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <th>Distance from Sun:</th>
-          <td>227,943,824 km</td>
-          <td>149,598,262 km</td>
-        </tr>
-        <tr>
-          <th>Length of Year:</th>
-          <td>687 Earth days</td>
-          <td>365.24 days</td>
-        </tr>
-        <tr>
-          <th>Temperature:</th>
-          <td>-87 to -5 °C</td>
-          <td>-88 to 58°C</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
+  {{ data.Comparison_Table | safe }}
 
   <div>
   {% for picture in data.Enhanced_Pictures %}
